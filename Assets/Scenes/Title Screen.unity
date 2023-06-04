@@ -642,6 +642,23 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 924b2d90551f37445a4d623dcf0b9302, type: 3}
+--- !u!1 &2117167488 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2960640103853244333, guid: bcd47638a267906489e616c10024134b, type: 3}
+  m_PrefabInstance: {fileID: 1637757670872294003}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2117167493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117167488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd8259b8a05d0ad4ea7eab75cb0c51c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1637757670872294003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -650,6 +667,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2640378867724822226, guid: bcd47638a267906489e616c10024134b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2117167493}
+    - target: {fileID: 2640378867724822226, guid: bcd47638a267906489e616c10024134b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MoveToScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640378867724822226, guid: bcd47638a267906489e616c10024134b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4305094693043386612, guid: bcd47638a267906489e616c10024134b, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -702,8 +731,20 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 528797306}
-    m_RemovedComponents: []
+    - target: {fileID: 9195353032632411681, guid: bcd47638a267906489e616c10024134b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195353032632411681, guid: bcd47638a267906489e616c10024134b, type: 3}
+      propertyPath: soundOffImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 96d59cf61a6d11a4b94dad82f9a26061, type: 3}
+    m_RemovedComponents:
+    - {fileID: 9195353032632411681, guid: bcd47638a267906489e616c10024134b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2960640103853244333, guid: bcd47638a267906489e616c10024134b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2117167493}
   m_SourcePrefab: {fileID: 100100000, guid: bcd47638a267906489e616c10024134b, type: 3}

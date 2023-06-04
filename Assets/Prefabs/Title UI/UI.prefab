@@ -383,7 +383,6 @@ GameObject:
   - component: {fileID: 4164438362626348866}
   - component: {fileID: 2686902270282214606}
   - component: {fileID: 2640378867724822226}
-  - component: {fileID: 9195353032632411681}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -505,21 +504,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &9195353032632411681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2960640103853244333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e901d372dc1ba3d4397062210edd6393, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundOffImage: {fileID: 0}
-  button: {fileID: 0}
-  audioSource: {fileID: 0}
 --- !u!1 &3607339401393223489
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,5 +884,5 @@ Transform:
   m_Children:
   - {fileID: 3424911206509612747}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

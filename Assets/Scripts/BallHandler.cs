@@ -48,7 +48,7 @@ public class BallHandler : MonoBehaviour
 
         currentBallRigidbody.position = worldPosition;
     }
-
+    
     private void SpawnNewBall()
     {
         GameObject ballInstance = Instantiate(ballPrefab, pivot.position, Quaternion.identity);

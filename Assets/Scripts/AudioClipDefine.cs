@@ -5,4 +5,9 @@ using UnityEngine;
 public class AudioClipDefine : MonoBehaviour
 {
     public AudioClip audioClip;
+
+    private void Start() 
+    {
+        
+    }
 }

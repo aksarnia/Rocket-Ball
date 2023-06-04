@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour
 {
+    // Simple but effective way to load scenes
     public void MoveToScene(int sceneID)
     {
         SceneManager.LoadScene(sceneID);

@@ -20,7 +20,7 @@ public class SoundController : MonoBehaviour
 
     public void SoundButtonClicked()
     {
-        if (isOn)
+        if (isOn == true)
         {
             button.image.sprite = soundOffImage;
             isOn = false;
