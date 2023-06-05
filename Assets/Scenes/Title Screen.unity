@@ -677,7 +677,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2640378867724822226, guid: bcd47638a267906489e616c10024134b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4305094693043386612, guid: bcd47638a267906489e616c10024134b, type: 3}
       propertyPath: m_RootOrder

@@ -3,35 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SoundController : MonoBehaviour
+namespace RocketBall.Sound
 {
-    
-    private Sprite soundOnImage;
-    private bool isOn = true;
 
-    public Sprite soundOffImage;
-    public Button button;
-    public AudioSource audioSource;
-
-    private void Start()
+    public class SoundController : MonoBehaviour
     {
-        soundOnImage = button.image.sprite;
-    }
+        
+        private Sprite soundOnImage;
+        private bool isOn = true;
 
-    public void SoundButtonClicked()
-    {
-        if (isOn == true)
-        {
-            button.image.sprite = soundOffImage;
-            isOn = false;
-            audioSource.mute = true;
-        }
-        else
-        {
-            button.image.sprite = soundOnImage;
-            isOn = true;
-            audioSource.mute = false;
-        }
-    }
+        public Sprite soundOffImage;
+        public Button button;
+        public AudioSource audioSource;
 
+        private void Start()
+        {
+            soundOnImage = button.image.sprite;
+        }
+
+        public void SoundButtonClicked()
+        {
+            if (isOn == true)
+            {
+                button.image.sprite = soundOffImage;
+                isOn = false;
+                audioSource.mute = true;
+            }
+            else
+            {
+                button.image.sprite = soundOnImage;
+                isOn = true;
+                audioSource.mute = false;
+            }
+        }
+
+    }
 }

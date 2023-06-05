@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoadScene : MonoBehaviour
+namespace RocketBall.Scenes
 {
-    // Simple but effective way to load scenes
-    public void MoveToScene(int sceneID)
+    public class LoadScene : MonoBehaviour
     {
-        SceneManager.LoadScene(sceneID);
-    }
+        // Simple but effective way to load scenes
+        public void MoveToScene(int sceneID)
+        {
+            SceneManager.LoadScene(sceneID);
+        }
 
-    public void ExitGame()
-    {
-        Application.Quit();
-        print ("Quit!");
+        public void ExitGame()
+        {
+            Application.Quit();
+            print ("Quit!");
+        }
     }
 }

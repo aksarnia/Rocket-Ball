@@ -3,75 +3,78 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class BallHandler : MonoBehaviour
+namespace RocketBall.Gameplay
 {
-    [SerializeField] private GameObject ballPrefab;
-    [SerializeField] private Rigidbody2D pivot;
-    [SerializeField] private float detachDelay;
-    [SerializeField] private float respawnDelay;
-
-    private Rigidbody2D currentBallRigidbody;
-    private SpringJoint2D currentBallSprintJoint;
-
-    private Camera mainCamera;
-    private bool isDragging;
-
-    private void Start()
+    public class BallHandler : MonoBehaviour
     {
-        mainCamera = Camera.main;
+        [SerializeField] private GameObject ballPrefab;
+        [SerializeField] private Rigidbody2D pivot;
+        [SerializeField] private float detachDelay;
+        [SerializeField] private float respawnDelay;
 
-        SpawnNewBall();
-    }
+        private Rigidbody2D currentBallRigidbody;
+        private SpringJoint2D currentBallSprintJoint;
 
-    private void Update()
-    {
-        if (currentBallRigidbody == null) { return; }
+        private Camera mainCamera;
+        private bool isDragging;
 
-        if (!Touchscreen.current.primaryTouch.press.isPressed)
+        private void Start()
         {
-            if (isDragging)
-            {
-                LaunchBall();
-            }
+            mainCamera = Camera.main;
 
-            isDragging = false;
-
-            return;
+            SpawnNewBall();
         }
 
-        isDragging = true;
-        currentBallRigidbody.isKinematic = true;
+        private void Update()
+        {
+            if (currentBallRigidbody == null) { return; }
 
-        Vector2 touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
+            if (!Touchscreen.current.primaryTouch.press.isPressed)
+            {
+                if (isDragging)
+                {
+                    LaunchBall();
+                }
 
-        Vector3 worldPosition = mainCamera.ScreenToWorldPoint(touchPosition);
+                isDragging = false;
 
-        currentBallRigidbody.position = worldPosition;
-    }
-    
-    private void SpawnNewBall()
-    {
-        GameObject ballInstance = Instantiate(ballPrefab, pivot.position, Quaternion.identity);
+                return;
+            }
 
-        currentBallRigidbody = ballInstance.GetComponent<Rigidbody2D>();
-        currentBallSprintJoint = ballInstance.GetComponent<SpringJoint2D>();
+            isDragging = true;
+            currentBallRigidbody.isKinematic = true;
 
-        currentBallSprintJoint.connectedBody = pivot;
-    }
+            Vector2 touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
 
-    private void LaunchBall()
-    {
-        currentBallRigidbody.isKinematic = false;
-        currentBallRigidbody = null;
+            Vector3 worldPosition = mainCamera.ScreenToWorldPoint(touchPosition);
 
-        Invoke(nameof(DetachBall), detachDelay);
-    }
+            currentBallRigidbody.position = worldPosition;
+        }
+        
+        private void SpawnNewBall()
+        {
+            GameObject ballInstance = Instantiate(ballPrefab, pivot.position, Quaternion.identity);
 
-    private void DetachBall()
-    {
-        currentBallSprintJoint.enabled = false;
-        currentBallSprintJoint = null;
+            currentBallRigidbody = ballInstance.GetComponent<Rigidbody2D>();
+            currentBallSprintJoint = ballInstance.GetComponent<SpringJoint2D>();
 
-        Invoke(nameof(SpawnNewBall), respawnDelay);
+            currentBallSprintJoint.connectedBody = pivot;
+        }
+
+        private void LaunchBall()
+        {
+            currentBallRigidbody.isKinematic = false;
+            currentBallRigidbody = null;
+
+            Invoke(nameof(DetachBall), detachDelay);
+        }
+
+        private void DetachBall()
+        {
+            currentBallSprintJoint.enabled = false;
+            currentBallSprintJoint = null;
+
+            Invoke(nameof(SpawnNewBall), respawnDelay);
+        }
     }
 }
