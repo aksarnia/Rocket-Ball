@@ -632,6 +632,7 @@ GameObject:
   - component: {fileID: 8777086348945889938}
   - component: {fileID: 2268306375099245834}
   - component: {fileID: -1740312246862176008}
+  - component: {fileID: 2043438251972975739}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Player
@@ -656,7 +657,7 @@ Transform:
   - {fileID: 5463012591881198769}
   - {fileID: 7302713240623312868}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!156049354 &1486527020510325106
 Grid:
@@ -717,7 +718,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 2.5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -750,9 +751,23 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1
+  m_Distance: 0.005
   m_DampingRatio: 0
   m_Frequency: 1
+--- !u!114 &2043438251972975739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4909079921045587038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68baad92ae49f774588ea0f28003480c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreIncrement: 100
+  scoreDecrement: 50
 --- !u!1 &5991883130428407596
 GameObject:
   m_ObjectHideFlags: 0

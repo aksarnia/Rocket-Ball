@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace RocketBall.Gameplay
+namespace Rocketball.Gameplay
 {
     public class BallHandler : MonoBehaviour
     {
